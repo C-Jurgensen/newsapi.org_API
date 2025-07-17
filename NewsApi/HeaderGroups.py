@@ -37,7 +37,10 @@ class HeaderGroup:
         for param, value in params.items():
             #print(param)
             #print(value)
-            self.__params[param](value)
+            if parameter := self.__params.get(param):
+                parameter(value)
+            else:
+                raise KeyError('Parameter "%s" is not in header group "%s".' %(param, self.name))
 
     def __str__(self):
         return self.__name

@@ -1,5 +1,6 @@
 from NewsApi.HeaderGroupConsts import HeaderGroups
 from URLs import URL
+from ApiKey import ApiKey
 
 from enum import Enum
 
@@ -16,7 +17,7 @@ class APIHandler:
     """
 
     def __init__(self, api_key:str):
-        self.apiKey = api_key
+        self.__apiKey = ApiKey(api_key)
 
     def __getitem__(self, url_name:str) -> URL | None:
         try:
@@ -28,18 +29,30 @@ class APIHandler:
     def __setitem__(self, name, url:URL):
         self.add_url(name, url)
 
+    @property
+    def api_key(self):
+        return str(self.__apiKey)
+
+    @api_key.setter
+    def api_key(self, key):
+        if not isinstance(key, str):
+            raise TypeError('apiKey needs to be of type string.')
+        self.__apiKey.key = key
+
     def add_url(self, url_name:str, url_obj:URL, overwrite:bool=True):
         if takenCheck := self[url_name]:
             if not overwrite:
                 raise KeyError('"%s" is already defined.' % url_name)
             if takenCheck is None:
                 raise KeyError("Key %s is assigned to an object other than type 'URL'" % url_name)
+        url_obj.set_api_key(self.__apiKey)
         self.__setattr__(url_name, url_obj)
 
 #Testing
 if __name__ == "__main__":
     handler = APIHandler("Test")
-    handler.add_url("Test",URL(HeaderGroups.retr_header_group("top")))
+    test = URL("UrlTest", header=HeaderGroups.retr_header_group("top"))
+    handler.add_url("Test", test)
     print(handler.Test)
-    urlTest = URL(HeaderGroups["top"].value)
-    print(urlTest.form_url(lang="en"))
+    urlTest = URL("Test",HeaderGroups["top"].value)
+    print(urlTest.form_url(lang="en", page=98))
