@@ -6,7 +6,12 @@ __all__=["HeaderGroup"]
 class HeaderGroup:
 
     def __init__(self, name:str, *params:str):
-
+        """
+        Instances header group creating a group of parameters to be used for a specific header.
+        :param name: The name to be printed out for the header group in url formation.
+        :param params: Parameter objects referenced by name from the Params class from the ParamConstraintsConsts
+        module to be used in the header group.
+        """
         self.__name:str = name
         self.__params:dict[str,Param] = {} #A dictionary of the param name and parameter.
         self.add_params(*params) #Adding initial passed in parameters.
