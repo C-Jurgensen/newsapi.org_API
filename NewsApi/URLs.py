@@ -24,7 +24,6 @@ class URL:
         self.__apiKey = api_key
         self.__header = header
         self.__setParams:set|bool = set(set_params) if isinstance(set_params, tuple) else set_params
-        #print(param_defaults)
         self.__paramDefaults:dict|None = param_defaults
         self.__paramDefaults['apiKey'] = self.__apiKey
 

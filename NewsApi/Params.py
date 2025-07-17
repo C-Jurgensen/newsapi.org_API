@@ -7,7 +7,6 @@ __all__ = ["Param"]
 class _ParamChecker:
 
     def __init__(self, options:set[Literal]):
-        #print(options)
         self.options = options
 
     def __call__(self, param_val):
@@ -35,8 +34,6 @@ class Param(ParamConstraint):
         self.name = name
         if len(options) != 0:
             if not isinstance(options, set):
-                #print(isinstance(options, set))
-                #print(options)
                 hashed_options = set()
                 for option in options:
                     hashed_options.add(option)

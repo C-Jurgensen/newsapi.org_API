@@ -40,8 +40,6 @@ class HeaderGroup:
         :param params: A keyword value pair of params passed in to be checked.
         """
         for param, value in params.items():
-            #print(param)
-            #print(value)
             if parameter := self.__params.get(param):
                 parameter(value)
             else:
