@@ -1,12 +1,12 @@
-from .Constraints import ParamConstraint
+from NewsApi.Constraints import ParamConstraint
 
-from typing import Literal, Union
+from typing import Literal, Union, override
 
 __all__ = ["Param"]
 
 class _ParamChecker:
 
-    def __init__(self, options:set):
+    def __init__(self, options:set[Literal]):
         self.options = options
 
     def __call__(self, param_val):
@@ -25,6 +25,5 @@ class Param(ParamConstraint):
             self.checker = _ParamChecker(options) if checker is not None else checker
         super().__init__(**kwargs)
 
-    def validate_param(self, value):
-        self(value)
-        self(value)
+    def __call__(self, value):
+        super().check_constraints(value)

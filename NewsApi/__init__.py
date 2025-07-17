@@ -39,7 +39,7 @@ class APIHandler:
 #Testing
 if __name__ == "__main__":
     handler = APIHandler("Test")
-    handler.add_url("Test",URL(HeaderGroups["top"].value))
+    handler.add_url("Test",URL(HeaderGroups.retr_header_group("top")))
     print(handler.Test)
     urlTest = URL(HeaderGroups["top"].value)
-    print(urlTest.form_url(language="en"))
+    print(urlTest.form_url(lang="en"))

@@ -1,13 +1,15 @@
-from NewsApi.BaseClasses.Params import Param
+from NewsApi.Params import Param
+
+from enum import Enum
 
 __all__=["Params"]
 
 
-class Params:
+class Params(Enum):
     country = Param("country", type=str, length=2)
     sources = Param("sources", type=str, length=2)
     category = Param("category", type=str)
-    query = Param("q")
+    query = Param("q", length=500)
     size = Param("pageSize", type=int)
     page = Param("page", type=int)
     apiKey=Param("apiKey", type=str)
@@ -20,8 +22,5 @@ class Params:
     lang=Param("language", type=str, length=2)
 
     @classmethod
-    def __class_getitem__(cls, item):
-        attribute = cls.__dict__[item]
-        if not isinstance(attribute, Param):
-            raise TypeError('%s for key %s is not a declared parameter and should not be returned.' % (attribute, item))
-        return attribute
+    def retrieve_param(cls, item) -> Param:
+        return cls[item].value

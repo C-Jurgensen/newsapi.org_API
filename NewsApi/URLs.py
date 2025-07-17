@@ -1,4 +1,4 @@
-from BaseClasses.HeaderGroups import HeaderGroup
+from NewsApi.HeaderGroups import HeaderGroup
 from HeaderGroupConsts import HeaderGroups
 
 __all__=["URL"]
