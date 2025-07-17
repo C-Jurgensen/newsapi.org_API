@@ -18,8 +18,20 @@ class _ParamChecker:
 
 
 class Param(ParamConstraint):
-
-    def __init__(self, name: str, *options: Union[str,int,any], checker = None, **kwargs):
+    """
+    Represents a parameter that could be used and assigned to a header group.
+    """
+    def __init__(self, name: str, *options: Union[str,int,any], checker = None, **constraints):
+        """
+        Makes an instance of the Param class that can be assigned to a header group for controlling the allowable
+        details that can be specified in the url.
+            *If you declare options you don't need to make constraints to be checked.
+        :param name: A string representing the name of the parameter.
+        :param options: An iterable of options that are valid options to be passed in for this Param.
+        :param checker: A custom checker is needed if your options are not of type string or integer with advanced checking
+        you will need to declare a custom checker.
+        :param constraints: Keyword value pairs of registered constraints referenced by name to check against the passed in value.
+        """
         self.name = name
         if len(options) != 0:
             if not isinstance(options, set):
@@ -33,7 +45,7 @@ class Param(ParamConstraint):
             self.checker = _ParamChecker(hashed_options) if checker is None else checker
         else:
             self.checker = checker
-        super().__init__(**kwargs)
+        super().__init__(**constraints)
 
     def __call__(self, value):
         if self.checker is not None:

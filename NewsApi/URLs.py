@@ -24,15 +24,22 @@ class URL:
         self.__apiKey = api_key
         self.__header = header
         self.__setParams:set|bool = set(set_params) if isinstance(set_params, tuple) else set_params
-        print(param_defaults)
+        #print(param_defaults)
         self.__paramDefaults:dict|None = param_defaults
         self.__paramDefaults['apiKey'] = self.__apiKey
 
     @property
     def param_defaults(self):
+        """
+        Returns a shallow copy of the default parameters.
+        """
         return self.__paramDefaults.copy()
 
     def set_api_key(self, key):
+        """
+        Sets a new api key.
+        :param key: An instance of the ApiKey class.
+        """
         if not isinstance(key, ApiKey):
             raise TypeError('"key" must be of type %s' % ApiKey)
         self.__apiKey = key

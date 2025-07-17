@@ -47,12 +47,3 @@ class APIHandler:
                 raise KeyError("Key %s is assigned to an object other than type 'URL'" % url_name)
         url_obj.set_api_key(self.__apiKey)
         self.__setattr__(url_name, url_obj)
-
-#Testing
-if __name__ == "__main__":
-    handler = APIHandler("Test")
-    test = URL("UrlTest", header=HeaderGroups.retr_header_group("top"))
-    handler.add_url("Test", test)
-    print(handler.Test)
-    urlTest = URL("Test",HeaderGroups["top"].value)
-    print(urlTest.form_url(lang="en", page=98))
