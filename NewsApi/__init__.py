@@ -40,10 +40,16 @@ class APIHandler:
         self.__apiKey.key = key
 
     def add_url(self, url_name:str, url_obj:URL, overwrite:bool=True):
-        if takenCheck := self[url_name]:
+        """
+        Adds a named url to the handler. These will be added to the attributes of the handler.
+        :param url_name: The name to be added in attributes to access the url.
+        :param url_obj: The URL object to be assigned to the attribute.
+        :param overwrite: Whether the current attribute if exists should be overwritten or not.
+        """
+        if takenCheck := self.__getattribute__(url_name):
             if not overwrite:
                 raise KeyError('"%s" is already defined.' % url_name)
-            if takenCheck is None:
+            if not isinstance(takenCheck, URL):
                 raise KeyError("Key %s is assigned to an object other than type 'URL'" % url_name)
         url_obj.set_api_key(self.__apiKey)
         self.__setattr__(url_name, url_obj)
