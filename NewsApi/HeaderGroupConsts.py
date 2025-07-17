@@ -1,7 +1,6 @@
 from enum import Enum
 
 from NewsApi.HeaderGroups import HeaderGroup
-from ParamConstraintsConsts import Params as p
 
 
 class HeaderGroups(Enum):

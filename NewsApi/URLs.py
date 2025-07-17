@@ -1,6 +1,6 @@
-from ApiKey import ApiKey
+from NewsApi.ApiKey import ApiKey
 from NewsApi.HeaderGroups import HeaderGroup
-from HeaderGroupConsts import HeaderGroups
+from NewsApi.HeaderGroupConsts import HeaderGroups
 
 from typing import Union
 

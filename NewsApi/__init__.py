@@ -1,6 +1,6 @@
 from NewsApi.HeaderGroupConsts import HeaderGroups
-from URLs import URL
-from ApiKey import ApiKey
+from NewsApi.URLs import URL
+from NewsApi.ApiKey import ApiKey
 
 from enum import Enum
 
