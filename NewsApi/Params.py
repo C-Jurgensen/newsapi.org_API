@@ -32,6 +32,7 @@ class Param(ParamConstraint):
         :param constraints: Keyword value pairs of registered constraints referenced by name to check against the passed in value.
         """
         self.name = name
+        self.__customChecker = False
         if len(options) != 0:
             if not isinstance(options, set):
                 hashed_options = set()
@@ -45,6 +46,10 @@ class Param(ParamConstraint):
         super().__init__(**constraints)
 
     def __call__(self, value):
+        """
+        Performs the checking for the value passed in to the parameter at formation time.
+        :param value: The value to be checked against the parameters rules.
+        """
         if self.checker is not None:
             self.checker(value)
         super().check_constraints(value)
