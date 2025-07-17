@@ -18,6 +18,7 @@ class APIHandler:
 
     def __init__(self, api_key:str):
         self.__apiKey = ApiKey(api_key)
+        self.__urls = set()
 
     def __getitem__(self, url_name:str) -> URL | None:
         try:
@@ -52,4 +53,14 @@ class APIHandler:
             if not isinstance(takenCheck, URL):
                 raise KeyError("Key %s is assigned to an object other than type 'URL'" % url_name)
         url_obj.set_api_key(self.__apiKey)
+        self.__urls.add(url_name)
         self.__setattr__(url_name, url_obj)
+
+    def __call__(self):
+        for url in self.__urls:
+            self.__getattribute__(url)()
+
+    def remove_url(self, url_name:str):
+        if url_name not in self.__urls:
+            raise KeyError("Url '%s' doesn't exist." % url_name)
+        self.__delattr__(url_name)
