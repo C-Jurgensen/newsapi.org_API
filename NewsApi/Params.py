@@ -5,7 +5,9 @@ from typing import Literal, Union, override
 __all__ = ["Param"]
 
 class _ParamChecker:
-
+    """
+    Default parameter option checker.
+    """
     def __init__(self, options:set[Literal]):
         self.options = options
 
