@@ -39,3 +39,17 @@ class TypeCheck:
     def __call__(self, obj:any):
         if type(obj) != self.objType:
             raise ConstraintFail
+
+
+@register_constraint_handler("int_limit")
+class IntRoof:
+
+    def __init__(self, limit:tuple[str,int]):
+        self.limit = limit
+
+    def __call__(self, int_val):
+        lower, upper = self.limit
+        if isinstance(lower, int) and int_val < lower:
+            raise ConstraintFail
+        if isinstance(upper, int) and int_val > upper:
+            raise ConstraintFail

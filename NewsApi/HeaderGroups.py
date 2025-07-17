@@ -35,6 +35,8 @@ class HeaderGroup:
         :param params: A keyword value pair of params passed in to be checked.
         """
         for param, value in params.items():
+            #print(param)
+            #print(value)
             self.__params[param](value)
 
     def __str__(self):
