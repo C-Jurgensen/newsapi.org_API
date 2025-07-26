@@ -13,7 +13,8 @@ class Source:
 
 @dataclass
 class Author:
-    authorName:str
+    firstName:str
+    lastName:str = None
 
 @dataclass
 class Article:
@@ -38,11 +39,14 @@ class Authors:
     def __init__(self):
         self.authors = {}
 
-    def add_author(self, author_name:str) -> Author | None:
+    def add_author(self, author_name:str | None) -> Author | None:
+        if author_name is None:
+            return
         authorCheck = self[author_name]
         if authorCheck:
             return authorCheck
-        self.authors[author_name] = Author(author_name)
+        if author_name:
+            self.authors[author_name] = Author(*author_name.split(" ", 1))
 
     def __getitem__(self, name:str):
         return self.authors.get(name)
