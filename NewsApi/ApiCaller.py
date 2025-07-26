@@ -16,6 +16,7 @@ class Author:
     firstName:str
     lastName:str = None
 
+
 @dataclass
 class Article:
     source:Source
@@ -117,10 +118,3 @@ class ApiResponse(Articles):
 
 def call_api(url:str) -> ApiResponse:
     return ApiResponse(request('GET', url).json())
-
-#testing
-if __name__ =="__main__":
-    from json import load
-    with open('test_data.json') as testData:
-        articles = load(testData)
-        Articles(articles['articles'])
