@@ -56,10 +56,6 @@ class APIHandler:
         self.__urls.add(url_name)
         self.__setattr__(url_name, url_obj)
 
-    def __call__(self):
-        for url in self.__urls:
-            self.__getattribute__(url)()
-
     def remove_url(self, url_name:str):
         if url_name not in self.__urls:
             raise KeyError("Url '%s' doesn't exist." % url_name)

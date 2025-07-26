@@ -1,6 +1,8 @@
+from NewsApi.ApiCaller import ApiResponse
 from NewsApi.ApiKey import ApiKey
 from NewsApi.HeaderGroups import HeaderGroup
 from NewsApi.HeaderGroupConsts import HeaderGroups
+from ApiCaller import call_api
 
 from typing import Union
 
@@ -75,5 +77,8 @@ class URL:
     def __str__(self):
         return self.form_url()
 
-    def __call__(self):
-        return self.form_url()
+    def __call__(self) -> 'ApiResponse':
+        """
+        Calls the api with the current url and returns an api response object.
+        """
+        return call_api(self.form_url())
