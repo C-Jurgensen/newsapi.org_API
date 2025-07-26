@@ -10,7 +10,7 @@ class ParamConstraint:
         Makes a group of constraints.
         :param kwargs: A dictionary of keyword value pairs that create instances of registered constraints to be implemented.
         """
-        self.__constraints = []
+        self.__constraints = list()
         for key, value in kwargs.items():
             constraint_handler = check_constraints(key)
             if constraint_handler is None:

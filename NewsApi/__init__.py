@@ -6,9 +6,6 @@ from enum import Enum
 
 __all__ = ["APIHandler"]
 
-class UrlConstants(Enum):
-    Retrieve_Top_Stories=...
-
 
 class APIHandler:
     """
