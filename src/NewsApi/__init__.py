@@ -1,8 +1,6 @@
-from NewsApi.HeaderGroupConsts import HeaderGroups
-from NewsApi.URLs import URL
-from NewsApi.ApiKey import ApiKey
-
-from enum import Enum
+from src.NewsApi.HeaderGroupConsts import HeaderGroups
+from src.NewsApi.URLs import URL
+from src.NewsApi.ApiKey import ApiKey
 
 __all__ = ["APIHandler"]
 

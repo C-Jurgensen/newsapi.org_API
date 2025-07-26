@@ -1,6 +1,6 @@
-from NewsApi.Constraints import ParamConstraint
+from src.NewsApi.Constraints import ParamConstraint
 
-from typing import Literal, Union, override
+from typing import Literal, Union
 
 __all__ = ["Param"]
 

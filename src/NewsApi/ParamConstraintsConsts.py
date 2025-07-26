@@ -1,4 +1,4 @@
-from NewsApi.Params import Param
+from src.NewsApi.Params import Param
 
 from re import findall
 from enum import Enum
