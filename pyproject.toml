@@ -1,5 +1,5 @@
 [build-system]
-requries = ["hatchling >= 1.26"]
+requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
 
 [project]

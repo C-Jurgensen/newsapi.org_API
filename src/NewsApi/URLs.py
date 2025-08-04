@@ -17,6 +17,7 @@ class URL:
         """
         Declares a url object for parameters to be entered into.
         :param header: The headerGroup to use.
+        :param set_params: All set params must have a set default value.
         :param editable_params: A keyword dictionary of parameters to be searched.
         """
         if isinstance(api_key, str):
@@ -35,6 +36,18 @@ class URL:
         Returns a shallow copy of the default parameters.
         """
         return self.__paramDefaults.copy()
+
+    @property
+    def set_params(self):
+        return self.__setParams
+
+    #Add in the ability to set new locked params.
+    @set_params.setter
+    def set_params(self, new_params:tuple):
+        """
+        Changes the locked params.
+        """
+        ...
 
     def set_api_key(self, key):
         """
