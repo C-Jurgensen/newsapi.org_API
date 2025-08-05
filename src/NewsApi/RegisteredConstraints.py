@@ -7,6 +7,11 @@ def check_constraints(key):
     return __constraintAttributes.get(key)
 
 def register_constraint_handler(name):
+    """
+    Will register a new constraint class within the _constraintAttributes dictionary.
+    :param name: The name of the constraint and what will be searched when you pass in the constraint key and the value
+    being the passed in value for the constraint.
+    """
     def register_func(func):
         if __constraintAttributes.get(name) is not None:
             raise KeyError('Constraint %s is already registered.' % name)
