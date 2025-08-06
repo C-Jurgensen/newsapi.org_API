@@ -41,14 +41,6 @@ class URL:
     def set_params(self):
         return self.__setParams
 
-    #Add in the ability to set new locked params.
-    @set_params.setter
-    def set_params(self, new_params:tuple):
-        """
-        Changes the locked params.
-        """
-        ...
-
     def set_api_key(self, key):
         """
         Sets a new api key.
