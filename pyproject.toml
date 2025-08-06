@@ -5,8 +5,11 @@ build-backend = "hatchling.build"
 [project]
 name = "News_API.org"
 version = "0.0.1"
+depedencies=[
+    "requests",
+]
 authors = [
-  { name="Cade Jurgensen", email="cadejurgensen@outlook.com"},
+  { name="CJurgensen"},
 ]
 description = "A package to interact with the API for 'newsapi.org'"
 readme = "README.md"
