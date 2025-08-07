@@ -9,7 +9,7 @@ packages = ["src/NewsApi"]
 name = "News_API.org"
 version = "0.0.1"
 depedencies=[
-    "requests==2.32.4",
+    "requests",
 ]
 authors = [
   { name="CJurgensen"},
