@@ -16,7 +16,7 @@ authors = [
 ]
 description = "A package to interact with the API for 'newsapi.org'"
 readme = "README.md"
-install_requires=["Requests"]
+install_requires=["requests"]
 requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
