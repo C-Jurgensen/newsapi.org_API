@@ -5,7 +5,6 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/NewsApi"]
 
-
 [project]
 name = "News_API.org"
 version = "0.0.1"
@@ -17,6 +16,7 @@ authors = [
 ]
 description = "A package to interact with the API for 'newsapi.org'"
 readme = "README.md"
+install_requires=["Requests"]
 requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
