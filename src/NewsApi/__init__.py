@@ -1,4 +1,3 @@
-from HeaderGroupConsts import HeaderGroups
 from URLs import URL
 from ApiKey import ApiKey
 
