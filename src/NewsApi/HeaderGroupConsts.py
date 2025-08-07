@@ -1,6 +1,6 @@
 from enum import Enum
 
-from src.NewsApi.HeaderGroups import HeaderGroup
+from HeaderGroups import HeaderGroup
 
 
 class HeaderGroups(Enum):

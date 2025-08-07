@@ -1,4 +1,4 @@
-from src.NewsApi.Constraints import ParamConstraint
+from Constraints import ParamConstraint
 
 from typing import Literal, Union
 

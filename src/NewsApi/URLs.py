@@ -1,7 +1,7 @@
-from src.NewsApi.ApiCaller import ApiResponse
-from src.NewsApi.ApiKey import ApiKey
-from src.NewsApi.HeaderGroups import HeaderGroup
-from src.NewsApi.HeaderGroupConsts import HeaderGroups
+from ApiCaller import ApiResponse
+from ApiKey import ApiKey
+from HeaderGroups import HeaderGroup
+from HeaderGroupConsts import HeaderGroups
 from ApiCaller import call_api
 
 from typing import Union

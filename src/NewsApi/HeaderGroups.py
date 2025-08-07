@@ -1,5 +1,5 @@
-from src.NewsApi.Params import Param
-from src.NewsApi.ParamConstraintsConsts import Params
+from Params import Param
+from ParamConstraintsConsts import Params
 
 __all__=["HeaderGroup"]
 

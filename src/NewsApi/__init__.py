@@ -1,6 +1,6 @@
-from src.NewsApi.HeaderGroupConsts import HeaderGroups
-from src.NewsApi.URLs import URL
-from src.NewsApi.ApiKey import ApiKey
+from HeaderGroupConsts import HeaderGroups
+from URLs import URL
+from ApiKey import ApiKey
 
 __all__ = ["APIHandler"]
 

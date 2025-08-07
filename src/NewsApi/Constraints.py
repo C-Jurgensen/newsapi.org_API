@@ -1,4 +1,4 @@
-from src.NewsApi.RegisteredConstraints import check_constraints
+from RegisteredConstraints import check_constraints
 
 __all__=["ParamConstraint"]
 
