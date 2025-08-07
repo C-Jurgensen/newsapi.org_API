@@ -8,6 +8,8 @@ from typing import Union
 
 __all__=["URL"]
 
+EVERYTHING = HeaderGroups.everything.value
+TOP_ARTICLES = HeaderGroups.top.value
 
 class URL:
 
