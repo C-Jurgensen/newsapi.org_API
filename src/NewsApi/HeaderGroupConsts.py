@@ -1,6 +1,6 @@
 from enum import Enum
 
-from HeaderGroups import HeaderGroup
+from .HeaderGroups import HeaderGroup
 
 
 class HeaderGroups(Enum):

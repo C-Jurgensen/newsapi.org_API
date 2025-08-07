@@ -1,4 +1,3 @@
-__path__ = __import__('pkgutil').extend_path(__import__('os').getcwd(),__name__)
 __title__ = "NewsApi"
 __author__ = "CJURGENSEN"
 

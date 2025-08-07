@@ -1,5 +1,5 @@
-from Params import Param
-from ParamConstraintsConsts import Params
+from .Params import Param
+from .ParamConstraintsConsts import Params
 
 __all__=["HeaderGroup"]
 
