@@ -7,14 +7,14 @@ packages = ["src/NewsApi"]
 
 [project]
 name = "News_API.org"
-version = "0.0.1"
+version = "1.0"
 depedencies=[
     "requests",
 ]
 authors = [
   { name="CJurgensen"},
 ]
-description = "A package to interact with the API for 'newsapi.org'"
+description = "**Note: Not an official package for this API.**\n A package to interact with the API for 'newsapi.org'."
 readme = "README.md"
 install_requires=["requests"]
 requires-python = ">=3.12"
